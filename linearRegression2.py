@@ -1,4 +1,4 @@
- 
+
 # coding: utf-8
 
 # # Logistic Regression
@@ -25,8 +25,9 @@ cwd = os.getcwd()
 #1.The error variable is normally distributed.
 #2.The error variance is constant for all values of x.
 #3.The errors are independent of each other.
-##########################   Part1       #################################################
-print("#################   PART1    ###############")
+
+########## PART 1 ##########
+print("########## PART 1 ##########")
 icu = pd.read_csv(os.path.join(cwd, 'icudata.csv'))
 #icu.columns = ['AGE', 'RACE', 'CPR', 'SYS', 'HRA' 'TYP']
 
@@ -63,7 +64,7 @@ y_prob = LogReg.predict_proba(X_test)
 
 #############   LASSO   ##############
 predvar = icu.copy()
-target = predvar.STA 
+target = predvar.STA
 predictors = predvar[['AGE', 'SYS', 'HRA', 'RACE_1', 'RACE_2', 'RACE_3', 'CPR_1', 'TYP_1']].copy()
 
 for i in list(predictors.columns.values):
@@ -103,7 +104,7 @@ print(model.coef_)
 
 #c.             Optimal alpha value from the Lasso section: 0.0013716207531124826
 
-#d. 
+#d.
                 #The coefficients are:
                 #AGE: 0.05951659
                 #SYS: -0.04463656
@@ -168,14 +169,14 @@ print(model.alpha_)
 
 #####   Coefficients:  #######
 #('TAG__youth', 11482.475855432787)
-#('TAG__speech', 12491.39328459928), 
-#('TAG__drones', #15345.191339397952), 
-#('TAG__time', 17980.39505624095), 
-#('TAG__live music', #25851.14506061892), 
-#('TAG__relationships', 31360.70940593261), 
-#('TAG__performance', #37747.12675614984), 
-#('TAG__success', 53097.30272017584), 
-#('TAG__body language', #54897.38713288022), 
+#('TAG__speech', 12491.39328459928),
+#('TAG__drones', #15345.191339397952),
+#('TAG__time', 17980.39505624095),
+#('TAG__live music', #25851.14506061892),
+#('TAG__relationships', 31360.70940593261),
+#('TAG__performance', #37747.12675614984),
+#('TAG__success', 53097.30272017584),
+#('TAG__body language', #54897.38713288022),
 #('TAG__magic', 147920.41349920526)]
 
 
